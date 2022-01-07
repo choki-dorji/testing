@@ -1,0 +1,79 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Testing</title>
+	<script type="text/javascript">
+
+		fetch('http://127.0.0.1:8000/api/register/', {
+			method: "post",
+	    headers: {
+	        
+	        "Content-Type": "application/json",
+	        "X-Requested-with":"XMLHttpRequest",
+	        "Accept":"application/json"
+	    },
+	    body: JSON.stringify({
+	    	user_name:"Chokibumthap123",
+	    	email:"chokibymthapdorji123@gmail.com",
+    		password: "123"
+
+	    })
+
+		})
+		.then(res=> console.log(res.json()));
+		// .then(data => console.log(data));
+
+
+
+	</script>
+</head>
+<body>
+	<h1>Testing with javascrpit for fetch</h1>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>input</title>
+</head>
+
+<body>
+<script>
+function myFunction() {
+  var x = document.getElementById("name").value;
+  var y = document.getElementById("email").value;
+  var z = document.getElementById("password").value;
+
+  fetch('https://bumthap123.herokuapp.com/api/register/', {
+    method: "post",
+    headers: {
+        "Accept": "application/json",
+        'X-Requested-With': 'XMLHttpRequest',
+        "Content-Type": "application/json",
+
+    },
+
+    body: JSON.stringify({user_name: x, email:y,password:z})
+    //login
+    //body: JSON.stringify({email:y,password:z})
+})
+    .then(res => res.json())
+    .then(data => console.log(data));
+
+    alert("success");
+ 
+  
+}
+</script>
+</body>
+
+	<input type="text" placeholder="enter user_name" id="name"> <br>
+	<input type="email" name="email" placeholder="enter email" id ="email"> <br>
+	<input type="password" name="pass" placeholder="enter password" id ="password"> <br>
+	<button onclick="myFunction()">Enter</button>
+	
+
+</html>
